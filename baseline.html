@@ -6,8 +6,32 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+     <script src="Sandan.geojson"></script>
+     <style>
+    #mapid {
+	   width:820;
+	   height:720px;
+           margin-left:350px;
+           padding:20px;	   
+   }
+	  </style>
+  
   </head>
   <body>
+    <div id="mapid"></div>
+  <script>
+    function mapstyle(feature) {
+	return{
+		fillColor:"#fff",
+	        color:"#000",
+	        weight:'1',
+	        fillOpacity:1
+	};
+    }
     
+    var basicMap = L.map('mapid').setView([-8.32, 115.114],5);
+    var jsonLayer = L.geoJSON(Sandan).addTo(basicMap);
+	 
+  </script>
   </body>
 </html>
